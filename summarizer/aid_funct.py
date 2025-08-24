@@ -17,10 +17,6 @@ def pdf_reader(pdf_path, txt_path):
         for page in reader.pages:
             text += page.extract_text() + "\n"
 
-    # Save text to txt file (optional)
-    with open(txt_path, "w", encoding="utf-8") as txt_file:
-        txt_file.write(text)
-
     return text
 
 def text_cleaner(text):
