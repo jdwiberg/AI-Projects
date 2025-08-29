@@ -57,7 +57,7 @@ def summarize_chunk(client, model, sys_prompt, task_prompt, chunk_text):
             {"role": "system", "content": [{"type": "input_text", "text": sys_prompt}]},
             {"role": "user",   "content": [{"type": "input_text", "text": f"{task_prompt}\n\n---\n{chunk_text}"}]},
         ],
-        max_output_tokens = 400
+        max_output_tokens = 500
     )
     return resp.output_text
 
@@ -68,7 +68,7 @@ def synthesize(client, model, sys_prompt, synth_prompt, synth_input):
             {"role": "system", "content": [{"type": "input_text", "text": sys_prompt}]},
             {"role": "user",   "content": [{"type": "input_text", "text": f"{synth_prompt}\n\n---\n{synth_input}"}]},
         ],
-        max_output_tokens = 800
+        max_output_tokens = 1000
     )
     return summary.output_text
 
